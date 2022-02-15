@@ -1,0 +1,18 @@
+.Notifications {
+  position: absolute;
+  right: 8px;
+  border: 2px dashed red;
+  padding: 8px;
+}
+
+.menuItem {
+  text-align: right;
+}
+
+[data-notification-type='default'] {
+  color: blue;
+}
+
+[data-notification-type="urgent"] {
+  color: red;
+}
