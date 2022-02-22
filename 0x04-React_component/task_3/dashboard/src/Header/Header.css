@@ -1,0 +1,12 @@
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 4px solid red;
+  padding: 8px;
+  color: rgb(255, 57, 57);
+}
+
+.App-logo {
+  max-width: 13%;
+}
