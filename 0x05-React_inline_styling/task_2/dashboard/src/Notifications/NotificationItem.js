@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { StyleSheet, css } from "aphrodite";
 
 const NotificationItem = React.memo(function NotificationItem({
   type,
@@ -8,12 +9,19 @@ const NotificationItem = React.memo(function NotificationItem({
   markAsRead,
   id,
 }) {
+  let typeStyle = css(type === "urgent" ? styles.urgent : styles.default);
+
   return value ? (
-    <li data-notification-type={type} onClick={() => markAsRead(id)}>
+    <li
+      className={typeStyle}
+      data-notification-type={type}
+      onClick={() => markAsRead(id)}
+    >
       {value}
     </li>
   ) : (
     <li
+      className={typeStyle}
       data-notification-type={type}
       dangerouslySetInnerHTML={html}
       onClick={() => markAsRead(id)}
@@ -36,5 +44,15 @@ NotificationItem.defaultProps = {
   markAsRead: () => {},
   id: NaN,
 };
+
+const styles = StyleSheet.create({
+  default: {
+    color: "blue",
+  },
+
+  urgent: {
+    color: "red",
+  },
+});
 
 export default NotificationItem;
