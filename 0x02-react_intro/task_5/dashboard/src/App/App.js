@@ -1,7 +1,7 @@
 import React from "react";
-import logo from './logo.jpg';
+import logo from '../assets/logo.jpg';
 import './App.css';
-import { getFullYear, getFooterCopy } from './utils';
+import { getFullYear, getFooterCopy } from '../utils/utils';
 
 function App() {
   return (
@@ -16,6 +16,11 @@ function App() {
         <p>
           Login to access the full dashboard
         </p>
+        <label for='email'>Email</label>
+        <input type="text" id="email"/>
+        <label for='password'>Password</label>
+        <input type="password" id="password"/>
+        <button >OK</button>
       </main>
       <footer className="App-footer">
         <p>
